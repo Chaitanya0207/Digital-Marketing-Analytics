@@ -5,29 +5,29 @@
 
     Marketa analytics is impressed with the second assignment and now want work to optimize their promotions campaign. They have weekly historical data and have built a model that shows sales a function of temperature, tv ad spending, radio spending and adstock effects.
 	
-### Assignment 3 - Part 1
+## Assignment 3 - Part 1
 
 •	CodeLab Link for Assignment: https://docs.google.com/document/d/13GjkdvdwsVPzC26A38MQDikqGSNg7QnZvCnYGYmOvew/edit#heading=h.nj23sjpj5u97
 
-#### Objective
+## Objective
 
 •	To analyze the data and understand the influence of ad spending on sales including the adstock effects.
 
-#### Tools
+## Tools
 
  1) Einstetin Analytics - Salesforce
  2)	Google Colaboratory
  3) Pandas for Data Analysis
 
- #### Future Enhancements
+## Future Enhancements
  
  1) Validating Adstock Model to understand how Adstock Value is generated.
  2) Manipulating the Adstock Model 1 and 2 to understand the decay effects of TV and Radio Spend.
  
  
- #### How to work with csv files
+## How to work with csv files
  
- ##### Steps to be followed to Analyze data using Einsten Analytics
+#### Steps to be followed to Analyze data using Einsten Analytics
  
  1) Data Wrangling CSV - Change the Sr.no format to "Text" and create the schema (final.jason) for the CSV file.
    
