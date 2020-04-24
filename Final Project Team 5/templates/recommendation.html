@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Recommendation</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="{{ url_for('static', filename='segmentation.css') }}">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+
+</head>
+
+
+<body>
+		<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class = "navbar-toggle" data-toggle="collapse" data-target = "#myNavbar">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				</button>
+				<p>Car Dealership</p>
+
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="{{ url_for('index') }}">Home</a></li>
+					<li><a href="{{ url_for('index') }}#about">About Us</a></li>
+					<li><a href="https://app.powerbi.com/groups/me/reports/aff843c7-d681-4d2d-8647-77c1a54244f5?ctid=6abfc73f-da64-4137-9f9f-15faae56f685">Analysis</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="main-w3layouts wrapper">
+		
+		<h1>Recommending cars having similar features</h1>
+		<hr>
+
+		<div class="main-agileinfo">
+			<div class="agileits-top">
+
+				<!--<label for="customerId"><!<b>Customer ID</b></label>
+				<input class="text" type="text" name="customerId" placeholder="Customer ID" required=""><br>!-->
+				
+				<form action="{{ url_for('recommend')}}" method="post">
+					
+					<label for="model_id"><b>Car Model :</b></label>
+					<input class="text" type="text" name="model_id" placeholder="Model Name" required="">
+					<br>
+					<input type="submit" value="RECOMMENDATIONS">
+						{% for image_name in image_names %}
+						<div class="col-lg-3 col-md-4 col-xs-6 thumb">
+							<br>
+								<img class="img-responsive" src=" {{url_for('send_image', filename=image_name)}}" 
+									 style="width:350px;height:100px;loat:right;margin-right: 30px;margin-bottom: 5px;border:solid black 1px;padding: 2px";		
+								/>
+							</br>
+						</div>
+						{% endfor %}	
+                    {% if model_mod %}						
+					  <table style="width=800px"> 						
+						<tr>                  
+						<th style="width:400px;border: 2px solid black;background-color: gray;color: white;text-align:center;font-size: 1em;font-weight: 300;">Model</th>          
+						<th style="width:400px;border: 2px solid black;background-color: gray;color: white;text-align:center;font-size: 1em;font-weight: 300;">  Manufacturer  </th>          
+						</tr>
+						<tr>                                                                                       
+						<td style="width:400px;border: 2px solid black;font-size: 0.9em;text-align:center;font-weight: 200;">{{ model_mod1 }}</td>         
+						<td style="width:400px;border: 2px solid black;font-size: 0.9em;text-align:center;font-weight: 200;">{{ model_man1 }}</td>
+						<tr>
+						<td style="width:400px;border: 2px solid black;font-size: 0.9em;text-align:center;font-weight: 200;">{{ model_mod2 }}</td>         
+						<td style="width:400px;border: 2px solid black;font-size: 0.9em;text-align:center;font-weight: 200;">{{ model_man2 }}</td>
+						<tr>
+						<td style="width:400px;border: 2px solid black;font-size: 0.9em;text-align:center;font-weight: 200;">{{ model_mod3 }}</td>         
+						<td style="width:400px;border: 2px solid black;font-size: 0.9em;text-align:center;font-weight: 200;">{{ model_man3 }}</td>
+						<tr>	
+						<td style="width:400px;border: 2px solid black;font-size: 0.9em;text-align:center;font-weight: 200;">{{ model_mod4 }}</td>         
+						<td style="width:400px;border: 2px solid black;font-size: 0.9em;text-align:center;font-weight: 200;">{{ model_man4 }}</td>   						
+						</tr>
+
+					  </table>
+					{% endif %}
+					<br><br> <strong><style="color:white;font-weight:bold">{{ model_message }}</style></strong> </br></br>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<p>&#169 Developed by TEAM 5</p>
+	</div>
+	
+</body>
+</html>

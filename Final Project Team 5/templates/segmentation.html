@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Segmentation</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="{{ url_for('static', filename='segmentation.css') }}">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+
+</head>
+
+
+<body>
+		<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class = "navbar-toggle" data-toggle="collapse" data-target = "#myNavbar">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				</button>
+				<p>Car Dealership</p>
+
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="{{ url_for('index') }}">Home</a></li>
+					<li><a href="{{ url_for('index') }}#about">About Us</a></li>
+					<li><a href="https://app.powerbi.com/groups/me/reports/aff843c7-d681-4d2d-8647-77c1a54244f5?ctid=6abfc73f-da64-4137-9f9f-15faae56f685">Analysis</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="main-w3layouts wrapper">
+		
+		<h1>Customer Segmentation</h1>
+		<hr>
+
+		<div class="main-agileinfo">
+			<div class="agileits-top">
+				
+				<form action="{{ url_for('segment')}}" method="post">
+					
+					<!-- <span style="color:white;font-weight:bold;font-size:20px;"> -->
+					<label for="cust_id"><b>Customer ID :</b></label>
+					<!-- <input type="number"   name="cust_id" required ="required"/> -->
+					<input class="text" type="number" name="cust_id" placeholder="Customer ID" required=""><br>
+					{% if customer_message %}
+						<h4 style="color:lime";"font-size: 1.5em">{{ customer_message }}</h4>
+				    {% endif %}
+					{% if customer_score %}
+						<h3 style="color:gold";"font-size: 1.5em">{{ customer_score }}</h3>
+				    {% endif %}
+					{% if customer_type %}
+						<h3 style="color:black";"font-size: 1.5em">{{ customer_type }}</h3>
+				    {% endif %}
+					{% if discount_rate %}
+						<h3 style="color:silver";"font-size: 1.5em">{{ discount_rate }}</h3>
+				    {% endif %}
+					{% if revenue %}
+						<h3 style="color:white";"font-size: 1.5em">{{ revenue }}</h3>
+				    {% endif %}
+					
+					
+					<!-- <br><strong><style="color:white;font-weight:bold">{{ prediction_text }}</style></strong> </br></br> -->
+					
+					{% if segment_name %}
+					<br><img class="img-responsive" src=" {{url_for('send_image', filename=segment_name)}}" width="100px" height="100px">
+					{% endif %}
+
+					<input type="submit" value="VIEW CUSTOMER SEGMENTATION">
+					
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<p>&#169 Developed by TEAM 5</p>
+	</div>
+	
+</body>
+</html>
