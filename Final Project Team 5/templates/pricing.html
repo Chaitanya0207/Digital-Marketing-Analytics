@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Pricing</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="{{ url_for('static', filename='pricing.css') }}">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+
+</head>
+
+
+<body>
+		<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class = "navbar-toggle" data-toggle="collapse" data-target = "#myNavbar">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				</button>
+				<p>Car Dealership</p>
+
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="{{ url_for('index') }}">Home</a></li>
+					<li><a href="{{ url_for('index') }}#about">About Us</a></li>
+					<li><a href="https://app.powerbi.com/groups/me/reports/aff843c7-d681-4d2d-8647-77c1a54244f5?ctid=6abfc73f-da64-4137-9f9f-15faae56f685">Analysis</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="main-w3layouts wrapper">
+		
+		<h1>Pricing - Strategy</h1>
+		<hr>
+
+		<div class="main-agileinfo">
+			<div class="agileits-top">
+			
+				<form action="{{ url_for('pricing')}}" method="post">
+					
+					<label for="yearresalevalue"><b>Year resale value</b></label>
+					<input class="text" type="number" name="yearresalevalue" placeholder="Year resale value" required=""><br>
+					
+					<label for="horsepower"><b>Horsepower</b></label>
+					<input class="text" type="number" name="horsepower" placeholder="Horsepower" required=""><br>
+					
+					<label for="curbweight"><b>Curb Weight</b></label>
+					<input class="text" type="number" name="curbweight" placeholder="Curb Weight" required=""><br>
+					
+					<label for="fuelcapacity"><b>Fuel Capacity</b></label>
+					<input class="text" type="number" name="fuelcapacity" placeholder="Fuel Capacity" required=""><br>
+					
+					<label for="fuelefficiency"><b>Fuel Efficiency</b></label>
+					<input class="text" type="number" name="fuelefficiency" placeholder="Fuel Efficiency" required=""><br>
+					
+					<label for="width"><b>Width</b></label>
+					<input class="text" type="number" name="width" placeholder="Width" required=""><br>
+					
+					<label for="height"><b>Height</b></label>
+					<input class="text" type="number" name="height" placeholder="Height" required=""><br>
+					
+					<input type="submit" value="PREDICT PRICING">
+					
+					<!-- <div class="carousel-caption"> -->
+					{% if base_price %}
+						<h4 style="color:lime";"font-size: 1.5em">{{ base_price }}</h4>
+				    {% endif %}
+					{% if base_price %}
+						<h4 style="color:lime";"font-size: 1.5em">{{ prediction_text }}</h4>
+				    {% endif %}
+						<!-- <strong><style="color:white;font-weight:bold">{{ base_price }}<br>{{ prediction_text }}</style></strong> </br></br> -->
+						<!--<h1>The trust your family deserves.</h1>-->
+						<!-- <br>				 -->
+				    <!-- </div> -->
+					
+					
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<p>&#169 Developed by TEAM 5</p>
+	</div>
+	
+</body>
+</html>
