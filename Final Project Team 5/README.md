@@ -44,4 +44,4 @@ We have one module for each case for manual implementation of predictive models 
 
 4.  *Customer Segmentation and CLTV.ipynb* - Jupyter notebook for Customer Segmentation & CLTV
 
-#### The repository also has Azure ML studio web service end point for each of the use cases
+
