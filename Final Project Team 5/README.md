@@ -36,7 +36,7 @@ This is web application for Car Dearlers to access and provide insights like Pri
 We have one module for each case for manual implementation of predictive models for use cases.
 
 
-1.  *car.py* - Flask Application to drive all the models for below mentioned notebooks using the pickle files created in each model
+1.  *car_dealers.py* - Flask Application to drive all the models for below mentioned notebooks using the pickle files created in each model
     +   Flask Python files to call pickle file (texts and labels).
     +   html in the static folder
 
@@ -45,5 +45,20 @@ We have one module for each case for manual implementation of predictive models 
 3.  *Car_Recommendation.ipynb* - Jupyter notebook for Car Recommendation- the recommendation model is Content Based
 
 4.  *Customer Segmentation and CLTV.ipynb* - Jupyter notebook for Customer Segmentation & CLTV
+
+#### Requirements
+
+	•   Flask==1.1.1
+	•	gunicorn==19.9.0
+	•	itsdangerous==1.1.0
+	•	Jinja2==2.10.1
+	•	MarkupSafe==1.1.1
+	•	Werkzeug==0.15.5
+	•	numpy>=1.9.2
+	•	scipy>=0.15.1
+	•	scikit-learn>=0.18
+	•	matplotlib>=1.4.3
+	•	pandas>=0.19
+	•	statsmodels==0.11.1
 
 
