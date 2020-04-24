@@ -13,7 +13,7 @@ This is web application for Car Dearlers to access and provide insights like Pri
 #### Use Cases :
  1. Car Price Prediction
  2. Customer Segmentation and CLTV
- 3. Price Prediction as per 
+ 3. Price Prediction as per Customer Segmentation
  4. Customer Recommendation
  
 #### Workflow :
